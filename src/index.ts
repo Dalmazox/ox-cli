@@ -6,13 +6,19 @@ import figlet from 'figlet';
 import { inject, injectable } from 'tsyringe';
 import IHandler from './domain/core/commands/IHandler';
 import container from './infra/container';
+import dotenv from 'dotenv';
 
 @injectable()
 class Index {
   constructor(@inject('ParseCommand') private _parseCommandHandler: IHandler) {
     clear();
+    this.InjectEnv();
     this.SayHello();
     this.ConfigureOptions();
+  }
+
+  InjectEnv() {
+    dotenv.config();
   }
 
   SayHello() {
@@ -32,7 +38,7 @@ class Index {
   }
 
   Startup() {
-    this._parseCommandHandler.handle();
+    this._parseCommandHandler.Handle();
   }
 }
 

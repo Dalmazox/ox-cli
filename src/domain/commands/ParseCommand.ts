@@ -11,11 +11,11 @@ class ParseCommand implements IHandler {
     @inject('CommandFactory') private _commandFactory: ICommandFactory
   ) {}
 
-  handle(): void {
+  Handle(): void {
     const options = program.opts() as Options;
     const command = this.Transpile(options);
 
-    this._commandFactory.Build(command).handle();
+    this._commandFactory.Build(command).Handle();
   }
 
   private Transpile(options: Options): CommandType {

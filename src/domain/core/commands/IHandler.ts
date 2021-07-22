@@ -1,5 +1,5 @@
 interface IHandler {
-  handle(): void;
+  Handle(): void;
 }
 
 export default IHandler;
