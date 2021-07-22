@@ -1,4 +1,10 @@
 {
+  "exclude": [
+    "./node_modules"
+  ],
+  "include": [
+    "./src/**/*.ts"
+  ],
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
@@ -15,6 +21,8 @@
       "node"
     ],
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   }
 }
